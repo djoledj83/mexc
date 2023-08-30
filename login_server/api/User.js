@@ -141,7 +141,7 @@ router.post('/signup', (req, res) => {
 
 const sendVerificationEmail = ({ _id, email }, res) => {
     // url koji cemo koristiti u emailu
-    const currentUrl = "https://t-4.me/";
+    const currentUrl = "https://mexc-yff7.onrender.com/";
 
     const uniqueString = uuidv4() + _id;
 
