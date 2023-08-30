@@ -33,6 +33,8 @@ const transporter = nodemailer.createTransport({
     }
 });
 
+
+
 // testing transporter
 
 transporter.verify((error, success) => {
@@ -139,7 +141,7 @@ router.post('/signup', (req, res) => {
 
 const sendVerificationEmail = ({ _id, email }, res) => {
     // url koji cemo koristiti u emailu
-    const currentUrl = "http://localhost:5000/";
+    const currentUrl = "https://mexc-yff7.onrender.com/";
 
     const uniqueString = uuidv4() + _id;
 
@@ -148,7 +150,7 @@ const sendVerificationEmail = ({ _id, email }, res) => {
         from: process.env.AUTH_EMAIL,
         to: email,
         subject: "Verify your email",
-        html: `<p>Verify your email to complete the signup and login to your accout.</p><br><p>This link expires in 6 hours</b>.</p><p>Press <a href=${currentUrl + "user/verify/" + _id + "/" + uniqueString}>here</a> to proceed </p>`,
+        html: `<p>Verify your email to complete the signup and login to your account.</p><br><p>This link expires in 6 hours</b>.</p><p>Press <a href=${currentUrl + "user/verify/" + _id + "/" + uniqueString}>here</a> to proceed </p>`,
     };
 
     // hash unique string

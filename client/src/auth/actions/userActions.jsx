@@ -12,7 +12,7 @@ export const loginUser = (
     return () => {
         axios
             .post(
-                "http://localhost:5000/user/signin",
+                "https://mexc-yff7.onrender.com/user/signin",
                 credentials,
                 {
                     headers: {
@@ -67,7 +67,7 @@ export const signupUser = (
     return (dispatch) => {
         axios
             .post(
-                "http://localhost:5000/user/signup",
+                "https://mexc-yff7.onrender.com/user/signup",
                 credentials,
                 {
                     headers: {
